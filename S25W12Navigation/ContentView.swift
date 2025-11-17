@@ -1,22 +1,29 @@
-//
-//  ContentView.swift
-//  S25W12Navigation
-//
-//  Created by Student on 11/16/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Text("노래 화면")
+
+            NavigationLink(destination: SingerView()) {
+                Text("가수 화면으로 이동")
+            }
         }
-        .padding()
     }
+}
+
+struct SingerView: View {
+    var body: some View {
+        NavigationStack {
+            Text("가수 화면")
+
+            NavigationLink(destination: SingerView()) {
+                Text("노래 화면으로 이동")
+            }
+        }
+        
+    }
+    
 }
 
 #Preview {
